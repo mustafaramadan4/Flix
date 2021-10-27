@@ -18,9 +18,6 @@ export default function App() {
         <StatusBar style="auto" />
       </View>
     </ImageBackground>
-    // <View style={styles.container}>
-      
-    // </View>
   );
 }
 
