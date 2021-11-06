@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import {View, Text, ImageBackground, Pressable} from 'react-native';
 import styles from './styles';
-import { useFonts } from 'expo-font';
-// import { Roboto_400Regular } from '@expo-google-fonts/roboto';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -22,12 +20,10 @@ const StyledButton = ({type, content, onPress}) => {
 
     const [dataLoaded, setDataLoaded] = useState(false);
 
-    const backgroundColor = '#C15442';
-    const textColor = 'white';
-
-    // const [loaded] = useFonts({
-    //     Roboto_400Regular: require('../../assets/fonts/favicon/Roboto-Regular.ttf'),
-    //   });
+    // 'trello yellow' for sign up button background
+    const backgroundColor = '#FFDF85';
+    // 'dark mode' for sign up button text
+    const textColor = '#222222';
 
     onPress = () => { console.log('Sign Up - pressed')};
     if (!dataLoaded) {
