@@ -13,7 +13,7 @@ export default function App() {
         <Text style={styles.mainTitle}>flixify</Text> 
       </View>
       <View style={styles.bottomContainer}>
-        <StyledButton content="Sign up with email"/>
+        <StyledButton content="Sign up"/>
         <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
         <StatusBar style="auto" />
       </View>
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.6)',
     alignItems: 'center',
+    // paddingTop: 100,
     justifyContent: 'center',
   },
   bottomContainer: {
