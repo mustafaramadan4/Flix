@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import { Image, View, Text, StyleSheet, TextInput, TouchableOpacity, Platform } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -13,10 +13,14 @@ const fetchFonts = () => {
     });
 };
 
-const EmailScreen = () => {
+const EmailScreen = ({ navigation }) => {
     const [dataLoaded, setDataLoaded] = useState(false);
 
     const [email, setEmail] = useState('');
+
+    const nextButtonJSX = <TouchableOpacity style={styles.nextButton} activeOpacity={0.5}>
+                            <Image source={require('../../assets/icons/next_button.png')}/>
+                        </TouchableOpacity>;
 
     if (!dataLoaded) {
         return (
@@ -28,22 +32,42 @@ const EmailScreen = () => {
         )
     } else {
         return (
-            <LinearGradient colors={['#FFCC3B', '#FF8FBE']} style={styles.linearGradient}>
-                <View style={styles.formTextContainer}>
-                    <Text style={styles.heading}>Welcome!</Text>
-                    <Text style={styles.question}>What's your email?</Text>
-                    <View style={styles.formInputContainer}>
-                        <TextInput 
-                            textAlign={'center'}
-                            style={styles.emailInput}
-                            onChange={e => setEmail(e.target.value)}
-                            placeholder='type here'
-                            value={email}
-                            autoFocus
+            <>
+                <LinearGradient colors={['#FFCC3B', '#FF8FBE']} style={styles.linearGradient}>
+                    <Image 
+                        source={require('../../assets/icons/progress_bar1.png')} 
+                        style={styles.progressBar}
+                    />
+                    <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.navigate('Signup')}>
+                        <Image 
+                            source={require('../../assets/icons/back_button.png')}
+                            style={styles.backButton}
                         />
+                    </TouchableOpacity>
+                    <View style={styles.formTextContainer}>
+                        <Text style={styles.heading}>Welcome!</Text>
+                        <Text style={styles.question}>What's your email?</Text>
+                        <View style={styles.formInputContainer}>
+                            <TextInput 
+                                textAlign='center'
+                                style={styles.emailInput}
+                                onChangeText={setEmail}
+                                placeholder='type here'
+                                value={email}
+                                autoFocus
+                                autoCapitalize='none'
+                                autoComplete='email'
+                                autoCorrect={false}
+                                keyboardType='email-address'
+                                returnKeyType='done'
+                                textContentType='emailAddress'
+                                placeholderTextColor='rgba(0,0,0,0.5)'
+                            />
+                        </View>
+                        { email.length > 0 && nextButtonJSX }
                     </View>
-                </View>
-            </LinearGradient>
+                </LinearGradient>
+            </>
         );
     }
 };
@@ -51,7 +75,6 @@ const EmailScreen = () => {
 const styles = StyleSheet.create({
     formTextContainer: {
         flex: 1,
-        // background: linear-gradient(169.61deg, #FFCC3B -2.5%, #FF8FBE 102.4%);
     },
     linearGradient: {
         flex: 1,
@@ -62,7 +85,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Lato-Bold',
         fontSize: 26,
         fontWeight: 'bold',
-        marginTop: 125,
+        marginTop: 60,
     },
     question: {
         color: '#222222',
@@ -70,15 +93,25 @@ const styles = StyleSheet.create({
         fontSize: 32,
     },
     formInputContainer: {
-        marginTop: 100,
+        marginTop: 75,
     },
     emailInput: {
-        color: '#222222',
-        opacity: 0.5,
-        fontFamily: 'Lato-Light',
-        fontSize: 32,
+        color: '#FFFFFF',
+        fontFamily: 'Lato-Bold',
+        fontSize: 24,
         textAlign: 'center',
         justifyContent: 'center',
+    },
+    nextButton: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: 60,
+    },
+    progressBar: {
+        marginTop: Platform.OS === 'ios' ? 10 : 0,
+    },
+    backButton: {
+        marginTop: 45,
     }
 });
 
