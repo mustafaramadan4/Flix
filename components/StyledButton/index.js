@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import {View, Text, Pressable} from 'react-native';
+import {View, Text, Pressable, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 
 const fetchFonts = () => {
@@ -37,12 +39,14 @@ const StyledButton = ({type, content, onPress}) => {
     } else {
         return (
             <View style={styles.container}>
-                <Pressable 
-                    style={[styles.button, {backgroundColor: backgroundColor}]} 
-                    onPress={onPress}
-                >
-                    <Text style={[styles.text, {color: textColor, fontFamily: 'roboto-regular' }]}>{content}</Text>
-                </Pressable>
+                <LinearGradient colors={['#FFCC3B', '#FF8FBE']} style={styles.linearGradient}>
+                    <TouchableOpacity
+                        style={[styles.button]} 
+                        onPress={onPress}
+                    >
+                        <Text style={[styles.text, {color: textColor, fontFamily: 'roboto-regular' }]}>{content}</Text>
+                    </TouchableOpacity>
+                </LinearGradient>
             </View>
         );
     }
