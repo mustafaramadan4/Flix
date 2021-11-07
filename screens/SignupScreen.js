@@ -8,12 +8,12 @@ const SignupScreen = () => {
     return (
         <ImageBackground source={image} resizeMode='cover' style={styles.image}>
             <View style={styles.mainContainer}>
-            <Text style={styles.mainTitle}>flixify</Text> 
+                <Text style={styles.mainTitle}>flixify</Text> 
             </View>
             <View style={styles.bottomContainer}>
-            <StyledButton content="Sign up"/>
-            <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
-            <StatusBar style="auto" />
+                <StyledButton content="Sign up"/>
+                <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
+                <StatusBar style="auto" />
             </View>
         </ImageBackground>
     );
