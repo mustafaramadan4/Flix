@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import {View, Text, ImageBackground, Pressable} from 'react-native';
+import {View, Text, Pressable} from 'react-native';
 import styles from './styles';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+
 
 const fetchFonts = () => {
     return Font.loadAsync({
@@ -25,7 +26,6 @@ const StyledButton = ({type, content, onPress}) => {
     // 'dark mode' for sign up button text
     const textColor = '#222222';
 
-    onPress = () => { console.log('Sign Up - pressed')};
     if (!dataLoaded) {
         return (
             <AppLoading
