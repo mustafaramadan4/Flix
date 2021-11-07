@@ -1,54 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Button, ImageBackground, StyleSheet, Text, View } from 'react-native';
-import StyledButton from './components/StyledButton';
+import EmailScreen from './screens/signup-form/EmailScreen';
+import SignupScreen from './screens/SignupScreen';
 
 export default function App() {
 
-  const image = require('./assets/movies_background_underlay.jpg');
+  const Stack = createNativeStackNavigator();
+
 
   return (
-    <ImageBackground source={image} resizeMode='cover' style={styles.image}>
-      <View style={styles.mainContainer}>
-        <Text style={styles.mainTitle}>flixify</Text> 
-      </View>
-      <View style={styles.bottomContainer}>
-        <StyledButton content="Sign up"/>
-        <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
-        <StatusBar style="auto" />
-      </View>
-    </ImageBackground>
+    <NavigationContainer>
+      <Stack.Navigator>
+          <Stack.Screen name="Signup" component={SignupScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Email" component={EmailScreen} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  mainContainer: {
-    flex: 1,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    alignItems: 'center',
-    // paddingTop: 100,
-    justifyContent: 'center',
-  },
-  bottomContainer: {
-    height: 150,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    alignItems: 'center',
-    paddingBottom: 30,
-  },
-  mainTitle: {
-    fontSize: 75,
-    fontWeight: '500',
-    color: 'white',
-    fontFamily: 'Futura'
-  },
-  image: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  loginMessage: {
-    color: 'white',
-  },
-  loginText: {
-    textDecorationLine: 'underline',
-  }
-});
