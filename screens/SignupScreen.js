@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text, ImageBackground, StatusBar } from 'react-native';
 import StyledButton from '../components/StyledButton';
 
-const SignupScreen = () => {
+const SignupScreen = ({ navigation }) => {
     const image = require('../assets/movies_background_underlay.jpg');
 
     return (
@@ -11,7 +11,7 @@ const SignupScreen = () => {
                 <Text style={styles.mainTitle}>flixify</Text> 
             </View>
             <View style={styles.bottomContainer}>
-                <StyledButton content="Sign up"/>
+                <StyledButton content="Sign up" onPress={() => navigation.navigate('Email')} />
                 <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
                 <StatusBar style="auto" />
             </View>
