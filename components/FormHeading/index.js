@@ -39,14 +39,14 @@ const styles = StyleSheet.create({
     heading: {
         color: '#222222',
         fontFamily: 'Lato-Bold',
-        fontSize: 26,
+        fontSize: 24,
         fontWeight: 'bold',
-        marginTop: 60,
+        marginTop: 40,
     },
     question: {
         color: '#222222',
         fontFamily: 'Lato-Light',
-        fontSize: 32,
+        fontSize: 30,
     },
 });
 
