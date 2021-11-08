@@ -8,7 +8,7 @@ const SignupScreen = ({ navigation }) => {
     return (
         <ImageBackground source={image} resizeMode='cover' style={styles.image}>
             <View style={styles.mainContainer}>
-                <Text style={styles.mainTitle}>flixify</Text> 
+                <Text style={styles.mainTitle}>flix</Text> 
             </View>
             <View style={styles.bottomContainer}>
                 <StyledButton content="Sign up" onPress={() => navigation.navigate('Email')} />
