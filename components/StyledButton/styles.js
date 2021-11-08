@@ -16,7 +16,7 @@ const styles =StyleSheet.create({
         fontFamily: 'Futura'
     },
     linearGradient: {
-        borderRadius: 20,
+        borderRadius: 25,
     },
 });
 
