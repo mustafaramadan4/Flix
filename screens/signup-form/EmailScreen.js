@@ -17,11 +17,21 @@ const EmailScreen = () => {
     return (
         <>
             <GradientView>
-                <SignupProgressBar />
+                <SignupProgressBar progressBarFile={require('../../assets/icons/progress_bar1.png')} />
                 <BackButton navigateDest='Signup' />
-                <FormHeading title="Welcome!" question="What's your name?" />
-                <FormInput email={email} onEmailChange={setEmail} />
-                { isEmailValid && <NextButton /> }
+                <FormHeading title="Welcome!" question="What's your email?" />
+                <FormInput
+                    value={email}
+                    onValueChange={setEmail}
+                    placeholderText='type here'
+                    autoFocus={true}
+                    autoCapitalize='none'
+                    keyboardType='email-address'
+                    autoComplete='email'
+                    textContentType='emailAddress'
+                    textAlign='center'
+                />
+                { isEmailValid && <NextButton marginTop={60} navigateDest='Name' /> }
             </GradientView>
         </>
     );
