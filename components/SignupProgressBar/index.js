@@ -1,21 +1,24 @@
 import React from 'react';
-import { Image, StyleSheet, Platform } from 'react-native';
+import { View, Image, StyleSheet, Platform } from 'react-native';
 
-const SignupProgressBar = () => {
+const SignupProgressBar = ({ progressBarFile }) => {
 
     return (
-        <>
+        <View>
             <Image 
-                source={require('../../assets/icons/progress_bar1.png')} 
+                source={progressBarFile} 
                 style={styles.progressBar}
-            /> 
-        </>
+            />
+        </View>
     );
 };
 
 const styles = StyleSheet.create({
     progressBar: {
         marginTop: Platform.OS === 'ios' ? 10 : 0,
+        // TODO: Look into fixing this (maybe just adjust image file)
+        position: 'absolute',
+        left: -25,
     },
 });
 

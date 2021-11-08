@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
+import { useNavigation } from '@react-navigation/core';
 
 const fetchFonts = () => {
     return Font.loadAsync({
@@ -12,7 +13,21 @@ const fetchFonts = () => {
     });
 };
 
-const FormInput = ({ email, onEmailChange }) => {
+const FormInput = (
+    {
+        value,
+        onValueChange,
+        placeholderText,
+        autoFocus,
+        autoCapitalize,
+        keyboardType,
+        autoComplete,
+        textContentType,
+        textAlign,
+        onSubmitEditing,
+        refInner,
+        secureTextEntry,
+    }) => {
     const [dataLoaded, setDataLoaded] = useState(false);
 
     if (!dataLoaded) {
@@ -29,18 +44,21 @@ const FormInput = ({ email, onEmailChange }) => {
                 <View style={styles.formInputContainer}>
                     <TextInput 
                         textAlign='center'
-                        style={styles.emailInput}
-                        onChangeText={onEmailChange}
-                        placeholder='type here'
-                        value={email}
-                        autoFocus
-                        autoCapitalize='none'
-                        autoComplete='email'
+                        style={[styles.emailInput, { textAlign: textAlign }]}
+                        onChangeText={onValueChange}
+                        placeholder={placeholderText}
+                        value={value}
+                        autoFocus={autoFocus}
+                        autoCapitalize={autoCapitalize}
+                        autoComplete={autoComplete}
                         autoCorrect={false}
-                        keyboardType='email-address'
-                        returnKeyType='done'
-                        textContentType='emailAddress'
-                        placeholderTextColor='rgba(0,0,0,0.5)'
+                        keyboardType={keyboardType}
+                        returnKeyType={'next'}
+                        textContentType={textContentType}
+                        placeholderTextColor='rgba(0,0,0,0.3)'
+                        onSubmitEditing={onSubmitEditing}
+                        ref={refInner}
+                        secureTextEntry={secureTextEntry}
                     />
                 </View>
             </>
@@ -50,14 +68,16 @@ const FormInput = ({ email, onEmailChange }) => {
 
 const styles = StyleSheet.create({
     formInputContainer: {
-        marginTop: 75,
+        marginTop: 50,
     },
     emailInput: {
         color: '#FFFFFF',
         fontFamily: 'Lato-Bold',
         fontSize: 24,
-        textAlign: 'center',
-        justifyContent: 'center',
+        // textAlign: 'center',
+        // justifyContent: 'flex-start',
+        // justifyContent: 'center',
+        // textAlign: textAlign,
     },
 });
 
