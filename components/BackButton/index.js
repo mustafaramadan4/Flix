@@ -20,7 +20,7 @@ const BackButton = ({ navigateDest }) => {
 
 const styles = StyleSheet.create({
     backButton: {
-        marginTop: 45,
+        marginTop: 30,
     }
 });
 
