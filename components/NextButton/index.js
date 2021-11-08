@@ -1,12 +1,14 @@
+import { useNavigation } from '@react-navigation/core';
 import React from 'react';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 
-const NextButton = ({ navigateDest }) => {
+const NextButton = ({ navigateDest, marginTop }) => {
+    const navigation = useNavigation();
 
     return (
         <>
-            <TouchableOpacity style={styles.nextButton} activeOpacity={0.5} onPress={navigateDest}>
+            <TouchableOpacity style={[styles.nextButton, { marginTop: marginTop }]} activeOpacity={0.5} onPress={() => navigation.navigate(navigateDest)}>
                 <Image source={require('../../assets/icons/next_button.png')}/>
             </TouchableOpacity>
         </>
@@ -17,7 +19,7 @@ const styles = StyleSheet.create({
     nextButton: {
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 60,
+        // marginTop: 25,
     },
 });
 
