@@ -5,6 +5,7 @@ import EmailScreen from './screens/signup-form/EmailScreen';
 import NameScreen from './screens/signup-form/NameScreen';
 import PasswordScreen from './screens/signup-form/PasswordScreen';
 import SignupScreen from './screens/SignupScreen';
+import SigninScreen from './screens/SigninScreen';
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
           <Stack.Screen name="Email" component={EmailScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Name" component={NameScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Password" component={PasswordScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="Signin" component={SigninScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
