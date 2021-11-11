@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View, Text, ImageBackground, StatusBar } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 import StyledButton from '../components/StyledButton';
 
 const SignupScreen = ({ navigation }) => {
@@ -12,8 +12,7 @@ const SignupScreen = ({ navigation }) => {
             </View>
             <View style={styles.bottomContainer}>
                 <StyledButton content="Sign up" onPress={() => navigation.navigate('Email')} />
-                <Text style={styles.loginMessage}>Already have an account? <Text style={styles.loginText}>Login here</Text></Text> 
-                <StatusBar style="auto" />
+                <StyledButton content="Sign in" onPress={() => navigation.navigate('Signin')} />
             </View>
         </ImageBackground>
     );
@@ -21,13 +20,13 @@ const SignupScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     mainContainer: {
-      flex: 1,
+      flex: 3,
       backgroundColor: 'rgba(0,0,0,0.6)',
       alignItems: 'center',
-      // paddingTop: 100,
       justifyContent: 'center',
     },
     bottomContainer: {
+      flex: 1,
       height: 150,
       backgroundColor: 'rgba(0,0,0,0.6)',
       alignItems: 'center',
