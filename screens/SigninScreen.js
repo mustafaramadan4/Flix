@@ -41,7 +41,7 @@ const SigninScreen = () => {
             />
             <Image source={require('../assets/icons/name_input_bar.png')} style={styles.nameBar} />
             <Text style={styles.forgotPassword}>forgot your password?</Text>
-            { isEmailValid && password.length > 0 && <NextButton navigateDest='Signup' marginTop={45} /> }
+            { isEmailValid && password.length > 0 && <NextButton navigateDest='HomeFeed' marginTop={45} /> }
         </GradientView>
     );
 };
