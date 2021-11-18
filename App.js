@@ -6,6 +6,7 @@ import NameScreen from './screens/signup-form/NameScreen';
 import PasswordScreen from './screens/signup-form/PasswordScreen';
 import SignupScreen from './screens/SignupScreen';
 import SigninScreen from './screens/SigninScreen';
+import HomeFeedScreen from './screens/HomeFeedScreen';
 
 export default function App() {
 
@@ -20,6 +21,7 @@ export default function App() {
           <Stack.Screen name="Name" component={NameScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Password" component={PasswordScreen} options={{ headerShown: false }} />
           <Stack.Screen name="Signin" component={SigninScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="HomeFeed" component={HomeFeedScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
