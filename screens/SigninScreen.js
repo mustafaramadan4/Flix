@@ -63,6 +63,7 @@ const SigninScreen = ({ navigation }) => {
                 value={password}
                 onValueChange={setPassword}
                 refInner={passwordRef}
+                onSubmitEditing={() => loginWithCredentials()}
             />
             <Image source={require('../assets/icons/name_input_bar.png')} style={styles.nameBar} />
             <Text style={styles.forgotPassword}>forgot your password?</Text>
