@@ -3,12 +3,12 @@ import React from 'react';
 import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 
 
-const NextButton = ({ navigateDest, marginTop }) => {
+const NextButton = ({ marginTop, onPress }) => {
     const navigation = useNavigation();
 
     return (
         <>
-            <TouchableOpacity style={[styles.nextButton, { marginTop: marginTop }]} activeOpacity={0.5} onPress={() => navigation.navigate(navigateDest)}>
+            <TouchableOpacity style={[styles.nextButton, { marginTop: marginTop }]} activeOpacity={0.5} onPress={onPress}>
                 <Image source={require('../../assets/icons/next_button.png')}/>
             </TouchableOpacity>
         </>
