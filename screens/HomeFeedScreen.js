@@ -17,9 +17,7 @@ const HomeFeedScreen = () => {
     return (
         <View style={styles.container}>
             <View style={styles.headerBar}>
-                <Image source={require('../assets/icons/menu_icon.png')} style={styles.menuIcon} />
                 <Text style={styles.heading}>Flix</Text>
-                <Image source={require('../assets/icons/settings_icon.png')} style={styles.settingsIcon} />
             </View>
             <View>
                 <FeedCarousel images={images} title='Trending' />
