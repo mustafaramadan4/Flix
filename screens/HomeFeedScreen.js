@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, } from 'react-native';
 import FeedCarousel from '../components/FeedCarousel';
 
 const HomeFeedScreen = () => {
@@ -15,37 +15,47 @@ const HomeFeedScreen = () => {
     ];
 
     return (
-        <View style={styles.container}>
-            <View style={styles.headerBar}>
-                <Image source={require('../assets/icons/menu_icon.png')} style={styles.menuIcon} />
-                <Text style={styles.heading}>Flix</Text>
-                <Image source={require('../assets/icons/settings_icon.png')} style={styles.settingsIcon} />
+        <ScrollView>
+            <View style={styles.container}>
+                <View style={styles.headerBar}>
+                    <Text style={styles.heading}>Flix</Text>
+                </View>
+                <View>
+                    <FeedCarousel images={[...images].sort(() => 0.5 - Math.random())} title='Trending' />
+                    <FeedCarousel images={[...images].sort(() => 0.5 - Math.random())} title='Popular with Friends' />
+                    <FeedCarousel images={[...images].sort(() => 0.5 - Math.random())} title='Top Shows in the US' />
+                </View>
             </View>
-            <View>
-                <FeedCarousel images={images} title='Trending' />
-                <FeedCarousel images={images} title='Popular with Friends' />
-                <FeedCarousel images={images} title='Top Shows in the US' />
-            </View>
-        </View>
+        </ScrollView>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
         margin: 15,
+        flex: 1
     },
     headerBar: {
         flexDirection: 'row',
         marginTop: 35,
         marginBottom: 35,
-        justifyContent: 'space-between',
-    },
-    menuIcon: {
+        justifyContent: 'center',
     },
     heading: {
         fontSize: 20,
     },
-    settingsIcon: {
+    bottomNavBar: {
+        backgroundColor: '#242632',
+        paddingTop: 20,
+        width: '100%',
+        height: 200,
+        flexDirection: 'row',
+        zIndex: 5,
+        position: 'absolute',
+        top: '90%',
+        left: 0,
+        alignSelf: 'stretch',
+        justifyContent: 'space-between',
     },
 });
 
