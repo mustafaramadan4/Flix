@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {View, Text, Pressable, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -13,13 +13,7 @@ const fetchFonts = () => {
     });
 };
 
-const StyledButton = ({type, content, onPress}) => {
-    // const type = props.type;
-    // const content = props.content;
-    // const onPress = props.onPress;
-
-    // const backgroundColor = type === 'primary' ? '#171A20CC' : '#FFFFFFA6';
-    // const textColor = type === 'primary' ? '#FFFFFF' : '#171A20';
+const StyledButton = ({ content, onPress }) => {
 
     const [dataLoaded, setDataLoaded] = useState(false);
 

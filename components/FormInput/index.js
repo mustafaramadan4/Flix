@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, StyleSheet, TextInput } from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import { useNavigation } from '@react-navigation/core';
 
 const fetchFonts = () => {
     return Font.loadAsync({
@@ -74,10 +73,6 @@ const styles = StyleSheet.create({
         color: '#FFFFFF',
         fontFamily: 'Lato-Bold',
         fontSize: 24,
-        // textAlign: 'center',
-        // justifyContent: 'flex-start',
-        // justifyContent: 'center',
-        // textAlign: textAlign,
     },
 });
 
