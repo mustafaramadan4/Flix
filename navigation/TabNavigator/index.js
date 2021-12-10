@@ -21,10 +21,7 @@ const TabNavigator = () => {
             screenOptions={() => ({
                 headerShown: false,
                 tabBarStyle: { position: 'absolute' },
-                tabBarStyle: { 
-                    backgroundColor: 'black',
-                    height: 100,
-                },
+                tabBarStyle: styles.tabBarStyle,
                 tabBarActiveTintColor: '#FFDF85',
             })}
         >
@@ -75,11 +72,10 @@ const TabNavigator = () => {
 };
 
 const styles = StyleSheet.create({
-    tabIconContainer: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        top: 10,
-    }
+    tabBarStyle: {
+        backgroundColor: 'black',
+        height: 100,
+    },
 });
 
 export default TabNavigator;
