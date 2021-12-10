@@ -9,7 +9,6 @@ import TabBarIcon from '../components/TabBarIcon';
 const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
-    const tabIndicatorBar = require('../../assets/icons/navbar/tab_indicator.png');
     const homeSelectedIcon = require('../../assets/icons/navbar/home_selected_icon.png');
     const homeUnselectedIcon = require('../../assets/icons/navbar/home_icon.png');
     const exploreSelectedIcon = require('../../assets/icons/navbar/explore_selected_icon.png');
