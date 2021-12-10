@@ -6,7 +6,7 @@ const TabBarIcon = ({ focused, selectedIcon, unselectedIcon, name }) => {
 
     return (
         <View style={styles.tabIconContainer}>
-            <Image source={tabIndicatorBar} style={{ marginBottom: 15, opacity: focused ? 1.0 : 0.0 }} /> 
+            <Image source={tabIndicatorBar} style={{ marginBottom: 10, opacity: focused ? 1.0 : 0.0 }} />
             <Image 
                 source={focused ? selectedIcon : unselectedIcon} 
             />
