@@ -27,13 +27,13 @@ const SigninScreen = ({ navigation }) => {
                 email: email,
                 password: password
             }
-        })
+        }) // TODO: update to log error when connection to express server fails
           .then(function (response) {
             console.log('response.data:')
             console.log(response.data);
             if (response.data.length == 1) {
                 console.log('User logged in!');
-                navigation.navigate('HomeFeed');
+                navigation.navigate('TabNav');
             } else if (response.data.length < 1) {
                 console.log('Failed to log user in.');
                 
@@ -63,6 +63,7 @@ const SigninScreen = ({ navigation }) => {
                 value={password}
                 onValueChange={setPassword}
                 refInner={passwordRef}
+                onSubmitEditing={() => loginWithCredentials()}
             />
             <Image source={require('../assets/icons/name_input_bar.png')} style={styles.nameBar} />
             <Text style={styles.forgotPassword}>forgot your password?</Text>
